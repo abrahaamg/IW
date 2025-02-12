@@ -23,3 +23,35 @@
     background-color: #8A2BE2; /* Fondo oscuro */
     font-weight: bold;
 }
+
+.chat-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-name {
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+}
+
+.mute-icon {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.unread-count {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 8px;
+}

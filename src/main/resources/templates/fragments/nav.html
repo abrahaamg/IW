@@ -29,7 +29,7 @@
                                 <a class="nav-link"  th:href="${active == 'ingresar'} ? '#' : @{/cartera/ingresar}">Cartera</a>
                             </li>
                             <li class="nav-item mx-3" th:if="${session?.u?.hasRole('USER')}" th:classappend="${active == 'chats'} ? 'active'">
-                                <a class="nav-link" th:href="${active == 'chats'} ? '#' : @{/}">Chats</a>
+                                <a class="nav-link" th:href="${active == 'chats'} ? '#' : @{/chats}">Chats</a>
                             </li>
                             <li class="nav-item mx-3" th:if="${session?.u?.hasRole('ADMIN')}" th:classappend="${active == 'administrar'} ? 'active'">
                                 <a class="nav-link"  th:href="${active == 'administrar'} ? '#' :@{/admin/}">Administrar</a>

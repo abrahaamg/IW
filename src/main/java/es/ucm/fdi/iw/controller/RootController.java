@@ -35,4 +35,9 @@ public class RootController {
     public String crearApuesta(Model model){
         return "crearApuesta";
     }
+
+    @GetMapping("/chats")
+    public String chats(Model model){
+        return "chats";
+    }
 }
