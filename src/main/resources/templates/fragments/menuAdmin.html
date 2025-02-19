@@ -9,6 +9,31 @@
             <li class="nav-item" th:class="${active == 'verificarEvento'} ? 'nav-item active' : 'nav-item'">
                 <a class="nav-link" th:href="${active == 'verificarEvento'} ? '#' : @{/admin/verificarEvento}">Verificar Evento</a>
             </li>
+
+            <li class="nav-item" th:class="${active == 'usuarios'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="${active == 'usuarios'} ? '#' : @{/admin/usuarios}">Usuarios</a>
+            </li>
+
+            <li class="nav-item" th:class="${active == 'reportes'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="${active == 'reportes'} ? '#' : @{/admin/reportes}">Reportes</a>
+            </li>
+
+            <li class="nav-item" th:class="${active == 'determinarEvento'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="${active == 'determinarEvento'} ? '#' : @{/admin/determinarEvento}">Determinar Evento</a>
+            </li>
+
+            <li class="nav-item" th:class="${active == 'crearEvento'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="${active == 'crearEvento'} ? '#' : @{/admin/crearEvento}">Crear Evento</a>
+            </li>
+
+            <li class="nav-item" th:class="${active == 'cancelarEvento'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="${active == 'cancelarEvento'} ? '#' : @{/admin/cancelarEvento}">Cancelar Evento</a>
+            </li>
+
+            <li class="nav-item" th:class="${active == 'gestionarSecciones'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="${active == 'gestionarSecciones'} ? '#' : @{/admin/gestionarSecciones}">Gestionar Secciones</a>
+            </li>
+            
         </ul>
     </div>
 </body>

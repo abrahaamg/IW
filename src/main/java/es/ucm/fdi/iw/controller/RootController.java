@@ -46,11 +46,35 @@ public class RootController {
         return "admin";
     }
 
-    @GetMapping("/admin/verificarEvento")
-    public String verificarEvento(Model model){
-        return "verificarEvento";
+    @GetMapping("/admin/usuarios")
+    public String usuarios(Model model){
+        return "usuarios";
     }
 
+    @GetMapping("/admin/reportes")
+    public String reportes(Model model){
+        return "reportes";
+    }
+
+    @GetMapping("/admin/determinarEvento")
+    public String determinarEvento(Model model){
+        return "determinarEvento";
+    }
+
+    @GetMapping("/admin/crearEvento")
+    public String crearEvento(Model model){
+        return "crearEvento";
+    }
+
+    @GetMapping("/admin/cancelarEvento")
+    public String cancelarEvento(Model model){
+        return "cancelarEvento";
+    }
+
+    @GetMapping("/admin/gestionarSecciones")
+    public String gestionarSecciones(Model model){
+        return "gestionarSecciones";
+    }
 
     @GetMapping("/cartera/ingresar")
     public String ingresar(Model model, HttpSession session) {
