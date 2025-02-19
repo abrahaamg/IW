@@ -61,6 +61,11 @@ public class RootController {
         return "determinarEvento";
     }
 
+    @GetMapping("/admin/verificarEvento")
+    public String verificarEvento(Model model){
+        return "verificarEvento";
+    }
+
     @GetMapping("/admin/crearEvento")
     public String crearEvento(Model model){
         return "crearEvento";
