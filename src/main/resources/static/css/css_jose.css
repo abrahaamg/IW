@@ -19,3 +19,68 @@
     background-color: #8A2BE2;
     font-weight: bold;
 }
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-signin .form-label {
+    font-weight: bold;
+}
+
+.form-signin .btn-login {
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    background-color: #8A2BE2;
+}
+
+.form-signin .btn-login:hover {
+    background-color: #5a005a;
+}
+
+[data-bs-theme="light"] .btn-login {
+    background-color: #8A2BE2;
+}
+
+[data-bs-theme="light"] .btn-login:hover {
+    background-color: #5a005a;
+}
+
+[data-bs-theme="dark"] .btn-login {
+    background-color: #8A2BE2;
+}
+
+[data-bs-theme="dark"] .btn-login:hover {
+    background-color: #5a005a;
+}
+
+
+[data-bs-theme="light"] .form-signin {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+[data-bs-theme="dark"] .form-signin {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .form-signin .form-label {
+    color: #ffffff;
+}

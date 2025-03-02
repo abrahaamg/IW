@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100" xmlns:th="http://www.thymeleaf.org">
+<html class="h-100" xmlns:th="http://www.thymeleaf.org" data-bs-theme="dark">
 
 <head>
     <th:block th:replace="fragments/head :: header" />
@@ -10,21 +10,23 @@
     <header th:replace="fragments/nav.html :: nav('login')"></header>
 
     <main class="flex-shrink-0">
-        <div class="container">
+        <div class="container-login">
             <form class="form-signin" method="post" th:action="@{/login}">
-                <h2 class="form-signin-heading">Please sign in</h2>
+                <h2 class="form-signin-heading">Inicia sesión</h2>
                 <p th:if="${#request.getQueryString() == 'error'}" class="error">
                     Error en nombre de usuario o contraseña
                 </p>
-                <p>
-                    <label for="username" class="visually-hidden">Username</label>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="required">
-                </p>
-                <p>
-                    <label for="password" class="visually-hidden">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required">
-                </p>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo" required>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" required>
+                </div>
+    
+                <button type="submit" class="btn btn-login">Iniciar Sesión</button>
             </form>
             <div class = "d-flex flex-grow-0" id="debugUsersBar">
                 <form class="d-flex" th:action="@{/login}" method="post">
