@@ -20,14 +20,16 @@
     font-weight: bold;
 }
 
-.container-login {
+.container-login, 
+.container-register {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
 }
 
-.form-signin {
+.form-signin, 
+.form-register {
     width: 100%;
     max-width: 400px;
     padding: 2rem;
@@ -38,11 +40,13 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-signin .form-label {
+.form-signin .form-label, 
+.form-register .form-label {
     font-weight: bold;
 }
 
-.form-signin .btn-login {
+.btn-login, 
+.btn-register {
     width: 100%;
     padding: 10px;
     color: #ffffff;
@@ -50,37 +54,44 @@
     background-color: #8A2BE2;
 }
 
-.form-signin .btn-login:hover {
+.btn-login:hover, 
+.btn-register:hover {
     background-color: #5a005a;
 }
 
-[data-bs-theme="light"] .btn-login {
-    background-color: #8A2BE2;
-}
-
-[data-bs-theme="light"] .btn-login:hover {
-    background-color: #5a005a;
-}
-
-[data-bs-theme="dark"] .btn-login {
-    background-color: #8A2BE2;
-}
-
-[data-bs-theme="dark"] .btn-login:hover {
-    background-color: #5a005a;
-}
-
-
-[data-bs-theme="light"] .form-signin {
+[data-bs-theme="light"] .form-signin, 
+[data-bs-theme="light"] .form-register {
     background-color: #ffffff;
     color: #000000;
 }
 
-[data-bs-theme="dark"] .form-signin {
+[data-bs-theme="light"] .btn-login, 
+[data-bs-theme="light"] .btn-register {
+    background-color: #8A2BE2;
+}
+
+[data-bs-theme="light"] .btn-login:hover, 
+[data-bs-theme="light"] .btn-register:hover {
+    background-color: #5a005a;
+}
+
+[data-bs-theme="dark"] .form-signin, 
+[data-bs-theme="dark"] .form-register {
     background-color: #2d2d2d;
     color: #ffffff;
 }
 
-[data-bs-theme="dark"] .form-signin .form-label {
+[data-bs-theme="dark"] .form-signin .form-label, 
+[data-bs-theme="dark"] .form-register .form-label {
     color: #ffffff;
+}
+
+[data-bs-theme="dark"] .btn-login, 
+[data-bs-theme="dark"] .btn-register {
+    background-color: #8A2BE2;
+}
+
+[data-bs-theme="dark"] .btn-login:hover, 
+[data-bs-theme="dark"] .btn-register:hover {
+    background-color: #5a005a;
 }

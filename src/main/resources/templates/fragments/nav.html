@@ -118,7 +118,7 @@
                         </th:block>
                         <th:block th:unless="${session.u}">
                             <li class="nav-item d-none d-lg-block"  th:classappend="${active == 'register'} ? 'active'">
-                                <a th:href="${active == 'register'} ? '#' : @{/login}" class="botonOvalado nav-link">Registrarse</a></li>
+                                <a th:href="${active == 'register'} ? '#' : @{/register}" class="botonOvalado nav-link">Registrarse</a></li>
                             <li class="nav-item" th:classappend="${active == 'login'} ? 'active'">
                                 <a th:href="${active == 'login'} ? '#' : @{/login}" class="botonOvalado nav-link" >Iniciar sesión</a></li>
                             <li class="nav-item d-flex align-items-center mx-3">

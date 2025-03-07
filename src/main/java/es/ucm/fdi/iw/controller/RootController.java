@@ -26,6 +26,11 @@ public class RootController {
         return "login";
     }
 
+    @GetMapping("/register")
+    public String register(Model model) {
+        return "register";
+    }
+
 	@GetMapping("/")
     public String index(Model model) {
         return "index";
