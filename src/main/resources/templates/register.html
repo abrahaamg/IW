@@ -5,8 +5,9 @@
     <title>Register</title>
   </head>
   <body class="d-flex flex-column h-100">
+    <header th:replace="fragments/nav.html :: nav('register')"></header>
     <div class = "container-register">
-      <form class="form-register">
+      <form class="form-register" method="post" th:action="@{/register}">
         <h1>Registro</h1>
         <p>Rellena el formulario para registrarte.</p>
 
