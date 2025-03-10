@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".form-register");
+    const statusMessage = document.getElementById("status-message");
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault(); // Evitar envío automático
 
         // Limpiar mensajes previos
         document.querySelectorAll(".error-message").forEach(span => span.textContent = "");
+        statusMessage.textContent = ""; // Limpiar mensaje de estado
+        statusMessage.className = ""; // Quitar clases previas
 
         // Obtener valores de los campos
         const dni = document.getElementById("dni").value.trim();
@@ -19,12 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Función para mostrar errores
         const showError = (id, message) => {
-            const errorSpan = document.getElementById(`error-${id}`);
-            if (errorSpan) {
-                errorSpan.textContent = message;
-                errorSpan.style.color = "red";
-                valid = false;
+            let errorSpan = document.getElementById(`error-${id}`);
+            if (!errorSpan) {
+                errorSpan = document.createElement("span");
+                errorSpan.id = `error-${id}`;
+                errorSpan.className = "error-message";
+                document.getElementById(id).parentNode.appendChild(errorSpan);
             }
+            errorSpan.textContent = message;
+            errorSpan.style.color = "red";
+            valid = false;
         };
 
         // Validaciones básicas
@@ -46,28 +53,32 @@ document.addEventListener("DOMContentLoaded", () => {
             showError("pwd", "La contraseña debe tener al menos 8 caracteres.");
         }
 
-        if (!valid) return; // Si hay errores, no seguir
+        if (!valid) return; // Si hay errores, no continuar
 
-        // Verificar si el usuario ya está registrado con AJAX
+        // Enviar los datos al servidor como JSON
         try {
-            const response = await fetch("/check-username", {
+            const response = await fetch("/register", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Content-Type": "application/json",
                 },
-                body: new URLSearchParams({ username, email }),
+                body: JSON.stringify({ dni, name, surname, username, email, pwd: password }),
             });
 
-            const data = await response.json();
+            const data = await response.text(); // Obtener la respuesta en texto
 
-            if (data.exists) {
-                showError("username", "El nombre de usuario ya está registrado.");
-                showError("email", "El email ya está registrado.");
+            if (response.ok) {
+                statusMessage.textContent = "Registro exitoso.";
+                statusMessage.className = "alert alert-success";
+                form.reset(); // Limpiar formulario tras el registro exitoso
             } else {
-                form.submit(); // Si no hay errores, enviar formulario
+                statusMessage.textContent = "Error en el registro: " + data;
+                statusMessage.className = "alert alert-danger";
             }
         } catch (error) {
             console.error("Error en la validación:", error);
+            statusMessage.textContent = "Ocurrió un error al registrar el usuario.";
+            statusMessage.className = "alert alert-danger";
         }
     });
 });
