@@ -6,45 +6,48 @@
   </head>
   <body class="d-flex flex-column h-100">
     <header th:replace="fragments/nav.html :: nav('register')"></header>
-    <div class = "container-register">
-      <form class="form-register" method="post" th:action="@{/register}">
-        <h1>Registro</h1>
-        <p>Rellena el formulario para registrarte.</p>
-
-        <div class="mb-3">
-          <label for="dni" class ="form-label"><b>DNI</b></label>
-          <input type="text" class = "form-control" placeholder="Introduce tu DNI" name="dni" id="dni" required/>
+      <div class="container-register">
+        <div class="scroll-container">
+            <form class="form-register" method="post" th:action="@{/register}">
+                <h1>Registro</h1>
+                <p>Rellena el formulario para registrarte.</p>
+    
+                <div class="mb-3">
+                    <label for="dni" class="form-label"><b>DNI</b></label>
+                    <input type="text" class="form-control" placeholder="Introduce tu DNI" name="dni" id="dni" required/>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="name" class="form-label"><b>Nombre</b></label>
+                    <input type="text" class="form-control" placeholder="Introduce tu nombre" name="name" id="name" required/>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="surname" class="form-label"><b>Apellidos</b></label>
+                    <input type="text" class="form-control" placeholder="Introduce tus apellidos" name="surname" id="surname" required/>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="username" class="form-label"><b>Nombre de usuario</b></label>
+                    <input type="text" class="form-control" placeholder="Introduce un nombre de usuario" name="username" id="username" required/>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="email" class="form-label"><b>Email</b></label>
+                    <input type="text" class="form-control" placeholder="Introduce tu email" name="email" id="email" required/>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="pwd" class="form-label"><b>Contraseña</b></label>
+                    <input type="password" class="form-control" placeholder="Introduce tu constraseña" name="pwd" id="pwd" required/>
+                </div>
+    
+                <button type="submit" class="btn btn-register">Confirmar</button>
+            </form>
+            <div id="status-message" class="mt-3"></div>
         </div>
-
-        <div class="mb-3">
-          <label for="name" class ="form-label"><b>Nombre</b></label>
-          <input type="text" class = "form-control" placeholder="Introduce tu nombre" name="name" id="name" required/>
-        </div>
-
-        <div class="mb-3">
-          <label for="surname" class ="form-label"><b>Apellidos</b></label>
-          <input type="text" class = "form-control" placeholder="Introduce tu apellido" name="surname" id="surname" required/>
-        </div>
-
-        <div class="mb-3">
-          <label for="username" class ="form-label"><b>Nombre de usuario</b></label>
-          <input type="text" class = "form-control" placeholder="Introduce un nombre de usuario" name="username" id="username" required/>
-        </div>
-
-        <div class="mb-3">
-          <label for="email" class ="form-label"><b>Email</b></label>
-          <input type="text" class = "form-control" placeholder="Introduce el email" name="email" id="email" required/>
-        </div>
-
-        <div class="mb-3">
-          <label for="pwd" class ="form-label"><b>Contraseña</b></label>
-          <input type="password" class = "form-control" placeholder="Enter Password" name="pwd" id="pwd" required/>
-        </div>
-
-        <button type="submit" class="btn btn-register">Confirmar</button>
-      </form>
-      <div id="status-message" class="mt-3"></div>
     </div>
+    
     <th:block th:replace="fragments/footer.html :: footer" />
 
   </body>

@@ -26,13 +26,13 @@
     justify-content: center;
     align-items: center;
     min-height: 80vh;
+    width: 100%;
+    flex-direction: column;
 }
 
 .form-signin, 
 .form-register {
     width: 100%;
-    max-width: 400px;
-    padding: 2rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     border-color: transparent;
@@ -114,4 +114,31 @@
     color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
+}
+
+.container-register {
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.scroll-container {
+    max-height: 70vh; /* Ajusta si sigue cortando */
+    overflow-y: auto;
+    padding: 2rem 1rem; /* Aumentamos el padding arriba y abajo */
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Asegura que el contenido no se corte */
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-signin { /* Login mantiene su tamaño actual */
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.form-register { /* Register será más ancho */
+    max-width: 500px; /* Ajusta según necesites */
+    padding: 2rem;
+    margin-top: 1rem; /* Agrega margen superior para evitar cortes */
 }
